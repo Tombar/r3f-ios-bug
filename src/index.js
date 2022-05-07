@@ -1,27 +1,22 @@
-import ReactDOM from 'react-dom'
-import React, { useRef } from 'react'
-import { Canvas, extend, useFrame, useThree } from '@react-three/fiber'
-import { OrbitControls } from '@react-three/drei'
 import './styles.css'
+
+import React, { useRef } from 'react'
+import { createRoot } from 'react-dom/client';
+
+import { Canvas } from '@react-three/fiber'
+import { OrbitControls } from '@react-three/drei'
 import { EffectComposer } from '@react-three/postprocessing'
 
-extend({ OrbitControls })
 
-function Controls() {
-  const controls = useRef()
-  const { camera, gl } = useThree()
-  useFrame(() => controls.current.update())
-  return <orbitControls ref={controls} args={[camera, gl.domElement]} enableDamping dampingFactor={0.1} rotateSpeed={0.5} />
-}
-
-ReactDOM.render(
+const container = document.getElementById('root');
+const root = createRoot(container); 
+root.render(
   <Canvas style={{ background: '#272730' }}>
-    <Controls />
+    <OrbitControls />
     <mesh>
       <boxBufferGeometry attach="geometry" args={[2, 2, 2]} />
       <meshNormalMaterial attach="material" />
     </mesh>
-    {/* <EffectComposer multisampling={8} autoClear={false}></EffectComposer> */}
-  </Canvas>,
-  document.getElementById('root')
+    <EffectComposer multisampling={8} autoClear={false}></EffectComposer>
+  </Canvas>
 )

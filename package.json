@@ -1,17 +1,17 @@
 {
-  "name": "r3f-orbit-controls",
+  "name": "r3f-ios-bug",
   "version": "1.0.0",
   "description": "",
   "keywords": [],
   "main": "src/index.js",
   "dependencies": {
     "@react-three/drei": "9.7.1",
-    "@react-three/fiber": "8.0.13",
+    "@react-three/fiber": "v7.0.0",
     "@react-three/postprocessing": "2.3.2",
     "react": "18.1.0",
     "react-dom": "18.1.0",
     "react-scripts": "5.0.1",
-    "three": "0.140.0"
+    "three": "0.136.0"
   },
   "devDependencies": {},
   "scripts": {
